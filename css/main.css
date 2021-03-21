@@ -152,13 +152,20 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0;
   padding: 0;
   width: 100vw;
+}
+
+@media screen and (max-width: 1000px) {
+  .full-wrap {
+    padding: 50px 0;
+  }
 }
 
 .container {
@@ -172,6 +179,20 @@ html {
   gap: 30px;
   height: 572px;
   width: 1110px;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 320px;
+    height: 100%;
+  }
 }
 
 .container .card {
@@ -234,9 +255,21 @@ html {
   width: 96%;
 }
 
+@media screen and (max-width: 1000px) {
+  .container .card__body--feature {
+    width: 97.6%;
+  }
+}
+
 .container .card__body--quote {
   line-height: 1.35rem;
   opacity: 0.5;
+}
+
+@media screen and (max-width: 1000px) {
+  .container .card__body--quote {
+    font-size: 0.95rem;
+  }
 }
 
 .container .card.top-wide {
@@ -250,6 +283,12 @@ html {
 
 .container .card.top-wide .card__top__avatar img {
   border: 2px solid #ae90df;
+}
+
+@media screen and (max-width: 1000px) {
+  .container .card.top-wide {
+    background-position: 90% 0;
+  }
 }
 
 .container .card.top-thin {
