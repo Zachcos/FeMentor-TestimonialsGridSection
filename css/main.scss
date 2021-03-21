@@ -19,3 +19,42 @@ html {
   font-size: 13px;
   font-weight: 500;
 }
+
+.full-wrap {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "top-wide top-wide top-thin tall"
+    "bot-thin bot-wide bot-wide tall";
+  gap: 30px;
+  height: 572px;
+  width: 1110px;
+  .card {
+    &.top-wide {
+      grid-area: top-wide;
+    }
+    &.top-thin {
+      grid-area: top-thin;
+    }
+    &.bot-wide {
+      grid-area: bot-wide;
+    }
+    &.bot-thin {
+      grid-area: bot-thin;
+    }
+    &.tall {
+      grid-area: tall;
+    }
+  }
+}
