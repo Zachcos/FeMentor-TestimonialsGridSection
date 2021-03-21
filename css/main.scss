@@ -2,7 +2,7 @@
 /* Start variables */
 $moderateViolet: hsl(263, 55%, 52%);
 $veryDarkGrayishBlue: hsl(217, 19%, 35%);
-$veryDarkBlackishBlue: hsl(219, 29%, 14%);
+$veryDarkBlackishBlue: hsl(217, 30%, 14%);
 $white: hsl(0, 0%, 100%);
 $lightGray: hsl(0, 0%, 81%);
 $lightGrayishBlue: hsl(210, 46%, 95%);
@@ -22,6 +22,7 @@ html {
 
 .full-wrap {
   align-items: center;
+  background: $lightGrayishBlue;
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -41,19 +42,82 @@ html {
   height: 572px;
   width: 1110px;
   .card {
+    border-radius: 8px;
+    color: $white;
+    padding: 24px 30px;
+    -webkit-box-shadow: 25px 25px 50px 0px rgba(72, 85, 106, 0.2);
+    -moz-box-shadow: 25px 25px 50px 0px rgba(72, 85, 106, 0.2);
+    box-shadow: 25px 25px 50px 0px rgba(72, 85, 106, 0.2);
+    &.text-dark {
+      color: $veryDarkBlackishBlue;
+    }
+    &__top {
+      display: flex;
+      &__avatar {
+        margin-right: 16px;
+        width: 30px;
+        img {
+          border-radius: 50%;
+          height: 100%;
+          width: 100%;
+        }
+      }
+      &__user {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        font-size: 0.9rem;
+        font-weight: 500;
+        &--verified {
+          font-size: 0.8rem;
+          opacity: 0.5;
+        }
+      }
+    }
+    &__body {
+      margin-top: 16px;
+      &--feature {
+        font-size: 1.45rem;
+        letter-spacing: 0.3px;
+        line-height: 1.75rem;
+        margin-bottom: 16px;
+        width: 96%;
+      }
+      &--quote {
+        line-height: 1.35rem;
+        opacity: 0.5;
+      }
+    }
     &.top-wide {
+      background: url("/images/bg-pattern-quotation.svg") no-repeat,
+        $moderateViolet;
+      background-position: 80% 0;
       grid-area: top-wide;
+      & .card__top__avatar {
+        img {
+          border: 2px solid lighten($moderateViolet, 20%);
+        }
+      }
     }
     &.top-thin {
+      background: $veryDarkGrayishBlue;
       grid-area: top-thin;
     }
     &.bot-wide {
+      background: $veryDarkBlackishBlue;
       grid-area: bot-wide;
+      & .card__top__avatar {
+        img {
+          border: 2px solid $moderateViolet;
+        }
+      }
     }
     &.bot-thin {
+      background: $white;
       grid-area: bot-thin;
     }
     &.tall {
+      background: $white;
       grid-area: tall;
     }
   }

@@ -148,6 +148,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: #ecf2f8;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -173,33 +174,112 @@ html {
   width: 1110px;
 }
 
+.container .card {
+  border-radius: 8px;
+  color: white;
+  padding: 24px 30px;
+  -webkit-box-shadow: 25px 25px 50px 0px rgba(72, 85, 106, 0.2);
+  box-shadow: 25px 25px 50px 0px rgba(72, 85, 106, 0.2);
+}
+
+.container .card.text-dark {
+  color: #19212e;
+}
+
+.container .card__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .card__top__avatar {
+  margin-right: 16px;
+  width: 30px;
+}
+
+.container .card__top__avatar img {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+.container .card__top__user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.container .card__top__user--verified {
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
+
+.container .card__body {
+  margin-top: 16px;
+}
+
+.container .card__body--feature {
+  font-size: 1.45rem;
+  letter-spacing: 0.3px;
+  line-height: 1.75rem;
+  margin-bottom: 16px;
+  width: 96%;
+}
+
+.container .card__body--quote {
+  line-height: 1.35rem;
+  opacity: 0.5;
+}
+
 .container .card.top-wide {
+  background: url("/images/bg-pattern-quotation.svg") no-repeat, #7541c8;
+  background-position: 80% 0;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: top-wide;
 }
 
+.container .card.top-wide .card__top__avatar img {
+  border: 2px solid #ae90df;
+}
+
 .container .card.top-thin {
+  background: #48556a;
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: top-thin;
 }
 
 .container .card.bot-wide {
+  background: #19212e;
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-area: bot-wide;
 }
 
+.container .card.bot-wide .card__top__avatar img {
+  border: 2px solid #7541c8;
+}
+
 .container .card.bot-thin {
+  background: white;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: bot-thin;
 }
 
 .container .card.tall {
+  background: white;
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 4;
